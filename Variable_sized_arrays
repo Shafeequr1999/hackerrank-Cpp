@@ -1,0 +1,31 @@
+//https://www.hackerrank.com/challenges/variable-sized-arrays/problem
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int sizeofarray,numofqueries;
+    cin>>sizeofarray>>numofqueries;
+    vector<vector<int>> vec_out;
+    for(int i=0;i<sizeofarray;i++){
+        vector<int> vec_in;
+        int sizeofinnervec;
+        cin>>sizeofinnervec;
+        for(int j=0;j<sizeofinnervec;j++){
+            int temp;
+            cin>>temp;
+            vec_in.push_back(temp);
+        }
+        vec_out.push_back(vec_in);
+    }
+    for(int i=0;i<numofqueries;i++){
+        int a,b;
+        cin>>a>>b;
+        cout<<vec_out[a][b]<<endl;
+    }
+    return 0;
+}
